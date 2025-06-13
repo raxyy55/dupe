@@ -1,0 +1,25 @@
+plugins {
+    id 'fabric-loom' version '1.6-SNAPSHOT'
+}
+
+group = 'me.dupe'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url "https://maven.fabricmc.net/" }
+}
+
+dependencies {
+    minecraft 'com.mojang:minecraft:1.21'
+    mappings 'net.fabricmc:yarn:1.21+build.1'
+    modImplementation 'net.fabricmc:fabric-loader:0.15.7'
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/dupe.accesswidener")
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(17)
+}
